@@ -1,5 +1,6 @@
 const mainContainer = document.querySelector('#container');
 const btnIn = document.getElementById("zoom");
+const btnReset = document.getElementById("reset");
 let gridContainer = document.querySelector('#grid-container');
 let zoomtimes = 20;
 
@@ -24,17 +25,31 @@ function gridCreate(gridSize) {
     });
 }
 
-function zoom() {
+function reset() {
+  zoom("reset");
+}
+function zoom(isReset) {
+  const zoomText = document.createElement('div');
   while (mainContainer.hasChildNodes()){
     mainContainer.removeChild(mainContainer.firstChild);
   }
+  zoomText.className = "text";
+  mainContainer.append(zoomText);
   gridContainer = document.createElement('div');
   gridContainer.id = "grid-container";
   mainContainer.append(gridContainer);
+  if (isReset === "reset") {
+    zoomtimes = 20;
+    zoomText.textContent = "Hover Mouse";
+    gridCreate(zoomtimes);
+    return;
+  }
   (zoomtimes > 45)? zoomtimes=10: zoomtimes+=5;
+  zoomText.textContent = zoomtimes+"x"+zoomtimes;
   gridCreate(zoomtimes);
 
 }
 
 btnIn.addEventListener("click", zoom);
+btnReset.addEventListener("click", reset);
 gridCreate(zoomtimes);

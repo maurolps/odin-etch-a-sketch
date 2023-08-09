@@ -1,31 +1,59 @@
+html {
+  height: 100%;
+}
+body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  background-color: rgb(4, 1, 19);
+}
+
 #container {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  background-color: green;
+  width: 60%;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  max-width: 600px;
+  background-color: #36374f;
+  border-style: solid;
+  border-radius: 20px;
+}
+
+.titletext {
+  color: #5a5b6d;
+  width: 20%;
+  margin-top: 50px;
+}
+
+#container .text{
+  color: #ffffff;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 #grid-container{
   display: flex;
   justify-content: center;
-  background-color: yellow;
-  width: 40%;
-
+  background-color: #36374f;
+  width: 80%;
 }
 
 #grid-container div{
+  margin: 0;
   border-style: solid;
-  border-width: 1px;
+  border-width: 0.1px;
+  border-color: #393a53;
   aspect-ratio: 1;
   width: 50px;
-  margin: 0;
 }
 
 .fadegrid {
   animation-name: fade;
-
-  animation-duration: 3s;
+  animation-duration: 2s;
   animation-iteration-count: 1;
 }
 
@@ -33,9 +61,43 @@
   animation: restart;
 }
 
+.btnContainer {
+  width: 50%;
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+}
+.btn {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  background-color: #36374f;
+  width: 70%;
+  margin-top: -15px;
+  padding-bottom: 15px;
+  gap: 5px;
+  border-radius: 20px;
+}
+
+button {
+  background-color: #1e8af0;
+  width: 30%;
+  height: 30px;
+  margin-top: 10px;
+  border-radius: 20px;
+  border-style: none;
+  color: rgb(240, 237, 255);
+  font-weight: bold;
+}
+
 @keyframes fade {
-  from { background: red }
-  to   { background: yellow }
+  0% {opacity: 100}
+  0% {background-color: #d27685}
+  25% {background-color: #adddc3}
+  50% {background-color: #ff6eff}
+  75% {background-color: #4920ff}
+  100% {background-color:#f0e2db}
+  100% {opacity: 0}
 }
 
 
