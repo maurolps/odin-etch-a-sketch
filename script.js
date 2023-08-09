@@ -1,16 +1,15 @@
 const mainContainer = document.querySelector('#container');
 const gridContainer = document.querySelector('#grid-container');
 
-function tint(para) {
-  para.target.style.backgroundColor = "pink";
+function tint() {
+  this.className = "fadegrid";
 }
 
-function gridCreate(gridSize, color) {
+function gridCreate(gridSize) {
   for (let i = 0; i < gridSize; i++) {
     const grid = document.createElement('div');
     grid.className = "grid";
     grid.id = "grid" + i;
-    grid.style.backgroundColor = "yellow";
     gridContainer.append(grid);
   }
   for (let j = 1; j < gridSize; j++) {
@@ -24,4 +23,4 @@ function gridCreate(gridSize, color) {
 
 }
 
-gridCreate(10, 'red');
+gridCreate(20);

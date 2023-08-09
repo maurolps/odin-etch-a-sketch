@@ -9,7 +9,7 @@
 #grid-container{
   display: flex;
   justify-content: center;
-  background-color: blue;
+  background-color: yellow;
   width: 40%;
 
 }
@@ -20,7 +20,23 @@
   aspect-ratio: 1;
   width: 50px;
   margin: 0;
-  background-color: brown;
 }
+
+.fadegrid {
+  animation-name: fade;
+
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+}
+
+#grid-container div:hover {
+  animation: restart;
+}
+
+@keyframes fade {
+  from { background: red }
+  to   { background: yellow }
+}
+
 
 
